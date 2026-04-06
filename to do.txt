@@ -1,0 +1,2 @@
+add lobby position
+ping -> average ping
