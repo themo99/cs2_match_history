@@ -3,25 +3,29 @@ from pathlib import Path
 import datetime as dt
 
 base_dir = Path(__file__).resolve().parent #gets dir of python file
-file_path = base_dir / "match_history.csv" 
+file_path = base_dir / "match_history.csv"                                
 
-csmatches_df = pd.DataFrame(columns=[
-    "Match Type", 
-    "Ping", 
-    "Kills",
-    "Deaths",
-    "Assits",
-    "MVPs",
-    "HSP",
-    "Score",
-    "Outcome",
-    "Map Score",
-    "Map",
-    "Time",
-    "Date",
-    "Day",
-    "Played with"
-])
+# csmatches_df = pd.DataFrame(columns=[                           # COMMENT OUT THIS LINE AFTER YOU RUN FOR THE FIRST EVER TIME 
+#     "Match Type", 
+#     "Ping", 
+#     "Kills",
+#     "Deaths",
+#     "Assits",
+#     "MVPs",
+#     "HSP",
+#     "Score",
+#     "Outcome",
+#     "Map Score",
+#     "Map",
+#     "Time",
+#     "Date",
+#     "Day",
+#     "Played with"
+# ])
+
+csmatches_df = pd.read_csv(file_path)                  # UNCOMMENT THIS LINE AND COMMENT OUT THE INITIALIZING DF SET UP AFTER THE FIRST TIME 
+csmatches_df = csmatches_df.loc[:, ~csmatches_df.columns.str.startswith('Unnamed')] # removes index collums
+
 
 with open(base_dir / "match_result_input.txt" ) as infile:
     game_data = infile.read().splitlines()
@@ -33,7 +37,7 @@ user_index = -1
 
 #for line in game_data:                #GETTING DATA FROM INPUT FILE 🔥🔥🔥🔥🔥
 #    print(line)
-
+ 
 match_type = game_data[2].rsplit()[0]               # prem or comp
 map = game_data[2].rsplit()[1]                      # map played
 
@@ -101,7 +105,7 @@ else:
     pass
 
 
-# ADDING IT ALL TO THE DF 🔥
+# ADDING IT ALL TO THE DF
 
 csmatches_df.loc[len(csmatches_df)] = {
     "Match Type": match_type,
@@ -124,4 +128,4 @@ csmatches_df.loc[len(csmatches_df)] = {
 # print()
 
 print(csmatches_df)
-csmatches_df.to_csv(file_path)
+csmatches_df.to_csv(file_path, index=False)
