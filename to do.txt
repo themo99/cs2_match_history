@@ -1,2 +1,4 @@
 add lobby position
 ping -> average ping
+if not Y/N redo
+if not number redo
