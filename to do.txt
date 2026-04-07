@@ -1,4 +1,8 @@
 add lobby position    
-ping -> average ping  COMPLETED
-if not Y/N redo       COMPLETED
-if not number redo    COMPLETED
+ping -> average ping                 COMPLETED P
+if not Y/N redo                      COMPLETED P
+if not number redo                   COMPLETED P
+assits -> assits                     COMPLETED 
+get full map name                    COMPLETED
+remove first 2 lines in input        COMPLETED
+clean up played with column          COMPLETED

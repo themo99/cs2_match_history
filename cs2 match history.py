@@ -10,7 +10,7 @@ file_path = base_dir / "match_history.csv"
 #     "Average Ping", 
 #     "Kills",
 #     "Deaths",
-#     "Assits",
+#     "Assists",
 #     "MVPs",
 #     "HSP",
 #     "Score",
@@ -38,8 +38,12 @@ user_index = -1
 #for line in game_data:                #GETTING DATA FROM INPUT FILE 🔥🔥🔥🔥🔥
 #    print(line)
  
-match_type = game_data[2].rsplit()[0]               # prem or comp
-map = game_data[2].rsplit()[1]                      # map played
+match_type = game_data[0].rsplit()[0]               # prem or comp
+map = ""
+
+map = (" ".join(game_data[0].rsplit()[1:]))                    # map played
+
+
 
 for i, line in enumerate(game_data):
     if line == ign:
@@ -49,7 +53,7 @@ statline = game_data[user_index].rsplit()      #users main stats from the game
 
 ping = statline[0]                  # players ping
 kills = statline[1]                 # players kills
-assits = statline[2]                # players assits
+assists = statline[2]                # players assists
 deaths = statline[3]                # players deaths
 score = statline[-1]                # players total score in game 
 head_shot_percent = statline[-2]    # players hsp for game
@@ -65,8 +69,8 @@ elif "˜" in mvp_string and str(mvp_string[-1]) not in num_list:
 else: 
     pass
 
-map_score = game_data[26]                            # hid map score here too hehe
-if user_index < 26:                                  # hard coded to line 26 so copy and paste has to be same everytime, find the users position relative to this line
+map_score = game_data[24]                            # hid map score here too hehe
+if user_index < 24:                                  # hard coded to line 26 so copy and paste has to be same everytime, find the users position relative to this line
     team = 1
 else:
     team = 2
@@ -82,7 +86,7 @@ if winner == team:                                 # outcome of the match
 else:
     outcome = "Loss"
 
-date_and_time = game_data[3].rsplit()               # get date time the game was played NOT changed to nzt
+date_and_time = game_data[1].rsplit()               # get date time the game was played NOT changed to nzt
 
 gmt_datetime = dt.datetime.strptime(f"{date_and_time[0]} {date_and_time[1]}", "%Y-%m-%d %H:%M:%S")  # proper formatting 
 
@@ -101,7 +105,7 @@ while solo not in ["Y", "N"]:
     else:
         break
 
-team_mates = []
+team_mates_list = []
 n_team_mates = -1
 
 if solo == 'N':
@@ -112,9 +116,9 @@ if solo == 'N':
 
     for i in range(int(n_team_mates)):
         friend = input("Name ONE: ")
-        team_mates.append(friend)
-else:
-    pass
+        team_mates_list.append(friend)
+
+team_mates = (", ".join(team_mates_list))
 
 
 # ADDING IT ALL TO THE DF
@@ -124,7 +128,7 @@ csmatches_df.loc[len(csmatches_df)] = {
     "Average Ping": ping,
     "Kills": kills,
     "Deaths": deaths,
-    "Assits": assits,
+    "Assists": assists,
     "MVPs": mvps,
     "HSP": head_shot_percent,
     "Score": score,

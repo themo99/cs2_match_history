@@ -1,12 +1,12 @@
-Match Type,Average Ping,Kills,Deaths,Assits,MVPs,HSP,Score,Outcome,Map Score,Map,Time,Date,Day,Played with
-Premier,47,11,16,5,0,27%,31,Win,13 : 11,Inferno,4:16 PM,2026-04-06,Monday,['ollyswift']
-Premier,47,5,13,0,0,40%,10,Win,6 : 13,Mirage,3:36 PM,2026-04-06,Monday,['ollyswift']
-Premier,48,6,7,2,0,33%,11,Loss,6 : 3,Inferno,3:18 PM,2026-04-06,Monday,['ollyswift']
-Premier,47,22,15,5,4,59%,57,Win,13 : 10,Overpass,1:49 PM,2026-04-05,Sunday,['ollyswift']
-Premier,47,7,16,2,2,71%,18,Loss,5 : 13,Nuke,1:14 PM,2026-04-05,Sunday,['ollyswift']
-Premier,47,3,16,4,0,33%,14,Win,13 : 6,Mirage,12:23 PM,2026-04-07,Tuesday,[]
-Premier,47,8,14,10,3,50%,31,Win,7 : 13,Inferno,12:53 PM,2026-04-07,Tuesday,[]
-Premier,47,13,14,7,1,23%,31,Loss,13 : 8,Dust,1:28 PM,2026-04-07,Tuesday,['ollyswift']
-Premier,48,21,15,6,4,52%,53,Loss,13 : 10,Mirage,2:04 PM,2026-04-07,Tuesday,['ollyswift']
-Premier,48,4,8,4,1,75%,13,Win,11 : 2,Nuke,2:47 PM,2026-04-07,Tuesday,['ollyswift']
-Premier,48,5,14,1,0,40%,13,Loss,3 : 13,Mirage,3:14 PM,2026-04-07,Tuesday,['ollyswift']
+Match Type,Average Ping,Kills,Deaths,Assists,MVPs,HSP,Score,Outcome,Map Score,Map,Time,Date,Day,Played with
+Premier,47,11,16,5,0,27%,31,Win,13 : 11,Inferno,4:16 PM,2026-04-06,Monday,ollyswift
+Premier,47,5,13,0,0,40%,10,Win,6 : 13,Mirage,3:36 PM,2026-04-06,Monday,ollyswift
+Premier,48,6,7,2,0,33%,11,Loss,6 : 3,Inferno,3:18 PM,2026-04-06,Monday,ollyswift
+Premier,47,22,15,5,4,59%,57,Win,13 : 10,Overpass,1:49 PM,2026-04-05,Sunday,ollyswift
+Premier,47,7,16,2,2,71%,18,Loss,5 : 13,Nuke,1:14 PM,2026-04-05,Sunday,ollyswift
+Premier,47,3,16,4,0,33%,14,Win,13 : 6,Mirage,12:23 PM,2026-04-07,Tuesday,ollyswift
+Premier,47,8,14,10,3,50%,31,Win,7 : 13,Inferno,12:53 PM,2026-04-07,Tuesday,ollyswift
+Premier,47,13,14,7,1,23%,31,Loss,13 : 8,Dust II,1:28 PM,2026-04-07,Tuesday,ollyswift
+Premier,48,21,15,6,4,52%,53,Loss,13 : 10,Mirage,2:04 PM,2026-04-07,Tuesday,ollyswift
+Premier,48,4,8,4,1,75%,13,Win,11 : 2,Nuke,2:47 PM,2026-04-07,Tuesday,ollyswift
+Premier,48,5,14,1,0,40%,13,Loss,3 : 13,Mirage,3:14 PM,2026-04-07,Tuesday,ollyswift
