@@ -7,7 +7,7 @@ file_path = base_dir / "match_history.csv"
 
 # csmatches_df = pd.DataFrame(columns=[                           # COMMENT OUT THIS LINE AFTER YOU RUN FOR THE FIRST EVER TIME 
 #     "Match Type", 
-#     "Ping", 
+#     "Average Ping", 
 #     "Kills",
 #     "Deaths",
 #     "Assits",
@@ -92,12 +92,24 @@ date = nz_datetime.date()
 time = nz_datetime.strftime("%#I:%M %p")
 day = nz_datetime.strftime("%A")
 
-solo = input("Did you solo queue? (Y/N) ")
+solo = ""
+
+while solo not in ["Y", "N"]:
+    solo = input("Did you solo queue? (Y/N) ")
+    if solo not in ["Y", "N"]:  
+        print("Invalid Answer")
+    else:
+        break
 
 team_mates = []
+n_team_mates = -1
 
 if solo == 'N':
-    n_team_mates = input("How many people did you stack with? ")
+    while int(n_team_mates) not in [1, 2, 3, 4]:
+        n_team_mates = input("How many people did you stack with? ")
+        if int(n_team_mates) not in [1, 2, 3, 4]:
+            print("Invalid Answer please try again")
+
     for i in range(int(n_team_mates)):
         friend = input("Name ONE: ")
         team_mates.append(friend)
@@ -109,7 +121,7 @@ else:
 
 csmatches_df.loc[len(csmatches_df)] = {
     "Match Type": match_type,
-    "Ping": ping,
+    "Average Ping": ping,
     "Kills": kills,
     "Deaths": deaths,
     "Assits": assits,
@@ -128,4 +140,4 @@ csmatches_df.loc[len(csmatches_df)] = {
 # print()
 
 print(csmatches_df)
-csmatches_df.to_csv(file_path, index=False)
+#csmatches_df.to_csv(file_path, index=False)
