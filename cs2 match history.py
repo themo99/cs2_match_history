@@ -144,4 +144,4 @@ csmatches_df.loc[len(csmatches_df)] = {
 # print()
 
 print(csmatches_df)
-#csmatches_df.to_csv(file_path, index=False)
+csmatches_df.to_csv(file_path, index=False)

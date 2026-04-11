@@ -19,8 +19,22 @@ def cleaning_lists(df, col):
 #cleaning_lists(csmatches_df, 'Played with')
 
 
-print(csmatches_df)
+#print(csmatches_df)
+
+#analysis stuff :)))
+
+total_kills = sum(csmatches_df['Kills'])
+total_deaths = sum(csmatches_df['Deaths'])
+alltime_kd = round(total_kills/total_deaths,2)
+games_played = len(csmatches_df)
+kills_per_game = round(total_kills/games_played, 2)
+
+print(f"In {games_played} games you have {total_kills} kills. This is {kills_per_game} kills a game!")
+print(f"You have died {total_deaths} times. This gives you a K/D of {alltime_kd}.")
 
 
 
-csmatches_df.to_csv(file_path, index=False)
+
+
+
+#csmatches_df.to_csv(file_path, index=False)
