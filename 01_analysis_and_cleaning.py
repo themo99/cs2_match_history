@@ -54,17 +54,17 @@ victory_map_groups = victories_df.groupby('Map').agg(
     total_wins=('Map', 'count')
 )
 
-full_df = pd.merge(map_groups, victory_map_groups, on='Map', how='left')            
+full_df = pd.merge(map_groups, victory_map_groups, on='Map', how='left')                    # merge everything     
 full_df = full_df.fillna(0)
 
-kd_per_map = (full_df['total_kills'] / full_df['total_deaths'])
-wr_per_map = (full_df['total_wins'] / full_df['total_plays'])
+full_df['kd_per_map'] = (full_df['total_kills'] / full_df['total_deaths'])
+full_df['wr_per_map'] = (round(full_df['total_wins'] / full_df['total_plays'] * 100))
 
 
-print(kd_per_map)
+
 #print(map_groups['total_wins'])
 
-print(full_df, wr_per_map)
+print(full_df)
 # csmatches_df.plot(x='Kills', y='HSP')
 # plt.show()
 

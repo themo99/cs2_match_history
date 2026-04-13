@@ -1,0 +1,33 @@
+This text file serves as definitions/locations for each variable in the assocaited files
+
+match_history.csv - Contains the historical data of matches played including stats and information on datetime, internet quality, etc.
+match_result_input.txt - This is the text file that cs2_match_history.py runs in order to add game data
+cs2_match_history.py - This script scrapes the data from the match_result_input file for data Analysis
+analysis_and_cleaning.py - This script is where the data set is cleaned for analysis, and later analyzed
+
+match_history.csv columns
+Match Type - The game mode played
+Average Ping - The average ping the player had throughout the game
+Kills - The total kills the player got during the game
+Deaths - The total times the player died dur ing the game
+Assits - The total assist count the player achieved in the game
+MVPs - the amount of times the player was awarded MVP for the round
+HSP - The players headshop percentage for finishing blows in the game
+Score - The amount of score the player achieved in the game
+Outcome - The outcome of the game, whether it be win loss or draw
+Map Score - The amount of rounds the player's team won compared to the opposition team
+Map - Which map the game took place on 
+Time - The time the warmup started
+Date - The date the game took place
+Day - The day of the week the game took place on
+Played With - Any players the user queued with
+
+analysis_and_cleaning.py functions
+cleaning_lists - cleaned first iteration of played with list into something more visually appealing
+outcome_to_binary - changes Win to 1, and Loss to 0 for analysis
+
+analysis_and_cleaning.py data frames
+map_groups - Entire csmatches_df data grouped into maps
+victories_df -  Filtered csmatches_df data grouped into maps where outcome == 1
+full_df = Merged map_groups and victories_df data frame where na values are 0
+
